@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y python3 git
-RUN mkdir /root/A /root/B /root/C /root/files
-RUN touch /root/files/a.txt /root/files/b.txt /root/files/c.txt
+WORKDIR /root
+RUN mkdir A B C files
+RUN touch files/a.txt files/b.txt files/c.txt
 RUN git clone https://github.com/qwawa/assignment_week8 /root/assignment_week8
-WORKDIR /root/assignment_week8
